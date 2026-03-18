@@ -36,8 +36,7 @@ return {
 	require("lspconfig").omnisharp.setup {
 		on_attach = on_attach,
 		cmd = {
-			"dotnet",
-			vim.fn.stdpath "data" .. "\\mason\\packages\\omnisharp\\libexec\\OmniSharp.dll",
+			"omnisharp"
 		},
 		settings = {
 			FormattingOptions = {
