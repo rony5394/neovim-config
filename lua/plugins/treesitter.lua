@@ -7,7 +7,7 @@ return {
 		"lua",
 		"go",
 		"javascript",
-		"html"
+		"html",
 		"c_sharp"
 	}, -- languages you use
       highlight = { enable = true },
