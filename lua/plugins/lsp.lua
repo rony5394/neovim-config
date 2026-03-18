@@ -14,6 +14,7 @@ return {
         keymap("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Code Action", buffer = bufnr })
         keymap("n", "<leader>gr", vim.lsp.buf.references, { desc = "References", buffer = bufnr })
         keymap("n", "<leader>gi", vim.lsp.buf.implementation, { desc = "Implementation", buffer = bufnr })
+	keymap("n", "<leader>d", vim.diagnostics.open_float, { desc = "Show Error", buffer = bufnr}) 
       end
 
       -- Save globally to reuse in mason-lspconfig
@@ -30,6 +31,26 @@ return {
           },
         },
       })
+
+
+	require("lspconfig").omnisharp.setup {
+		on_attach = nvlsp.on_attach,
+		capabilities = nvlsp.capabilities,
+		cmd = {
+			"dotnet",
+			vim.fn.stdpath "data" .. "\\mason\\packages\\omnisharp\\libexec\\OmniSharp.dll",
+		},
+		settings = {
+			FormattingOptions = {
+				EnableEditorConfigSupport = false,
+				OrganizeImports = true,
+			},
+			Sdk = {
+				IncludePrereleases = true,
+			},
+		},
+	}
+
     end,
   },
 
@@ -52,7 +73,8 @@ return {
         ensure_installed = {
           "lua_ls",
           "intelephense",
-	  "gopls"
+	  "gopls",
+	  "c_sharp"
         },
         automatic_installation = true,
       })
