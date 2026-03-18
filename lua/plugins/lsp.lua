@@ -73,7 +73,7 @@ return {
           "lua_ls",
           "intelephense",
 	  "gopls",
-	  "c_sharp"
+	  "omnisharp"
         },
         automatic_installation = true,
       })
