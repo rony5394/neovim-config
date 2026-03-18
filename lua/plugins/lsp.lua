@@ -36,7 +36,10 @@ return {
 	require("lspconfig").omnisharp.setup {
 		on_attach = on_attach,
 		cmd = {
-			"Omnisharp"
+			"dotnet",
+			"/home/rony539/local/share/nvim/mason/packages/omnisharp/libexec/OmniSharp.dll",
+			"--languageserver",
+			"--hostPID", tostring(vim.fn.getpid())
 		},
 		settings = {
 			FormattingOptions = {
