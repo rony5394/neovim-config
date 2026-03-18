@@ -34,8 +34,7 @@ return {
 
 
 	require("lspconfig").omnisharp.setup {
-		on_attach = nvlsp.on_attach,
-		capabilities = nvlsp.capabilities,
+		on_attach = on_attach,
 		cmd = {
 			"dotnet",
 			vim.fn.stdpath "data" .. "\\mason\\packages\\omnisharp\\libexec\\OmniSharp.dll",
