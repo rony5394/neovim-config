@@ -36,7 +36,8 @@ return {
 	require("lspconfig").omnisharp.setup {
 		on_attach = on_attach,
 		cmd = {
-			"OmniSharp"
+			"/run/current-system/sw/bin/OmniSharp",
+			"--stdio"
 			-- "dotnet",
 			-- "/home/rony539/local/share/nvim/mason/packages/omnisharp/libexec/OmniSharp.dll",
 			-- "--languageserver",
