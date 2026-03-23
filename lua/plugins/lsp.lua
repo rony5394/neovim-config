@@ -33,24 +33,24 @@ return {
       })
 
 
-	require("lspconfig").omnisharp.setup {
-		on_attach = on_attach,
-		cmd = {
-			"dotnet",
-			"/home/rony539/local/share/nvim/mason/packages/omnisharp/libexec/OmniSharp.dll",
-			"--languageserver",
-			"--hostPID", tostring(vim.fn.getpid())
-		},
-		settings = {
-			FormattingOptions = {
-				EnableEditorConfigSupport = false,
-				OrganizeImports = true,
-			},
-			Sdk = {
-				IncludePrereleases = true,
-			},
-		},
-	}
+	-- require("lspconfig").omnisharp.setup {
+	-- 	on_attach = on_attach,
+	-- 	cmd = {
+	-- 		"dotnet",
+	-- 		"/home/rony539/local/share/nvim/mason/packages/omnisharp/libexec/OmniSharp.dll",
+	-- 		"--languageserver",
+	-- 		"--hostPID", tostring(vim.fn.getpid())
+	-- 	},
+	-- 	settings = {
+	-- 		FormattingOptions = {
+	-- 			EnableEditorConfigSupport = false,
+	-- 			OrganizeImports = true,
+	-- 		},
+	-- 		Sdk = {
+	-- 			IncludePrereleases = true,
+	-- 		},
+	-- 	},
+	-- }
 
     end,
   },
